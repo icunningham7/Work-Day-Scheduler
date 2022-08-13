@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Work-Day-Scheduler - module05-challenge
 
 ## 05 Third-Party APIs: Work Day Scheduler
@@ -99,3 +100,6 @@ You are required to submit the following for review:
 
 - - -
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+=======
+# Work-Day-Scheduler
+>>>>>>> 4d6afcbcd2e340f6aa0e749c740c5d57ba813f70

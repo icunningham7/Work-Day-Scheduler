@@ -7,10 +7,9 @@ var endTime = 17;
 
 
 
-
+// Display the current day in the header
 function displayCurrentDate() {
     let currentDay = moment().format('dddd, MMMM Do');
-    console.log(currentDay);
     currentDayEl.text(currentDay);
 }
 
