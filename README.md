@@ -1,5 +1,6 @@
 <<<<<<< HEAD
-# Work-Day-Scheduler - module05-challenge
+# Work-Day-Scheduler
+#### UofU-VIRT-FSF-PT-07-2022-U-LOLC-MWTH Module 5 Code Challenge
 
 ## 05 Third-Party APIs: Work Day Scheduler
 
