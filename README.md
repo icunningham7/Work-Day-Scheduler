@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Work-Day-Scheduler
 #### UofU-VIRT-FSF-PT-07-2022-U-LOLC-MWTH Module 5 Code Challenge
 
