@@ -7,7 +7,7 @@ var dayStart = 9;
 var dayEnd = 17;
 
 // object for local storage
-var savedSchedule = JSON.parse(window.localStorage.getItem('schedule')) || [];
+var savedSchedule = JSON.parse(window.localStorage.getItem('schedule')) || {};
 
 // display the current day in the header
 function displayCurrentDate() {
@@ -67,39 +67,22 @@ function decorateTimeBlock(time, timeBlockEl) {
 
 // saveLocalStorage
 function saveLocalStorage(event) {
-    let timeBlock = {
-        time: 0,
-        name: "",
-    }
     let timeBlockSaved = $(event.target);
 
-    timeBlock.time = timeBlockSaved.parent().parent().parent().children('.input-group-prepend').children('span').attr('time');
-    timeBlock.name = timeBlockSaved.parent().parent().parent().children('input').val();
+    let time = timeBlockSaved.parent().parent().parent().children('.input-group-prepend').children('span').attr('time');
+    time = parseInt(time);
+    let name = timeBlockSaved.parent().parent().parent().children('input').val().trim();
 
-    let oldTimeBlockEventIndex = savedSchedule.findIndex(
-        (oldtimeBlock) => {
-            return oldtimeBlock.time === timeBlock.time;
-    });
-    if (timeBlock.time && timeBlock.name) {
-        if (oldTimeBlockEventIndex !== -1) {
-            savedSchedule[oldTimeBlockEventIndex].name = timeBlock.name;
-        } else {
-            savedSchedule.push(timeBlock);
-        }
-            localStorage.setItem('schedule', JSON.stringify(savedSchedule));
-    };
+    savedSchedule[time] = name;
+    localStorage.setItem('schedule', JSON.stringify(savedSchedule));
+
 };
 // displayLocalStorage
 function displayLocalStorage(time, timeBlockEl) {
-    let scheduleTime = time;
-    console.log("running display local storage");
-    let timeBlockIndex = savedSchedule.findIndex((timeBlock) => {
-        console.log(timeBlock);
-        console.log(scheduleTime);
-        return parseInt(scheduleTime) === parseInt(timeBlock.time);
-        });
-    if (timeBlockIndex !== -1) {
-        timeBlockEl.val(savedSchedule[timeBlockIndex].name);
+    console.log(typeof(time));
+    if (savedSchedule[time]) {
+        console.log(savedSchedule[time]);
+        timeBlockEl.val(savedSchedule[time]);
     }
 }
 
